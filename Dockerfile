@@ -12,7 +12,7 @@ RUN pip3 install SQLAlchemy==1.3.6
 RUN pip3 install WTForms==2.2.1
 RUN pip3 install PyMySQL
 RUN pip3 install virtualenv
-RUN python -m virtualenv venv
+RUN python -m venv venv
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=production
 COPY . .
