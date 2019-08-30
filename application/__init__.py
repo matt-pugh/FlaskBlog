@@ -21,7 +21,7 @@ for x in range(retry):
 	try:
 		tables = db.engine.table_names()
 		break
-	execpt:
+	except:
 		if x < retry -1:
 			time.sleep(1)
 			pass
