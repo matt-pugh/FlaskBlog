@@ -15,3 +15,15 @@ login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
 from application import routes
+
+
+tables = db.engine.table_names()
+
+try:
+	tables.remove('alembic_version')
+except ValueError:
+	pass
+
+if len(tables) == 0:
+	db.create_all()
+	db.session.commit()
